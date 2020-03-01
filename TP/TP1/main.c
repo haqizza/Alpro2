@@ -1,6 +1,6 @@
 #include "header.h"
-
 int main(){
+    /*Saya Muhammad Izzatul Haq mengerjakan evaluasi TP1 (MAMEN19) MAtriks Mudah Emang Nice dalam mata kuliah Algoritma Pemgrograman 2 untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.*/
     int j=0,i,k,n,m,x,step;
     
     
