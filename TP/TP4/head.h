@@ -7,10 +7,10 @@ typedef struct{
     float jarak;
     int waktu;
 }list;
-list temp;
-list arr[13];
+list temp;//Temporary Array
+list arr[13];//Main Array
 
-void selection(int n,char o,char value[]);
-void insertion(int n,char o,char value[]);
-void printSort(int n);
-void printSend(int n,int num,char value[]);
+void selection(int n,char o,char value[]);//Selection Sort
+void insertion(int n,char o,char value[]);//Insertion Sort
+void printSort(int n);//Sorted Data Print
+void printSend(int n,int num,char value[]);//Sending Print

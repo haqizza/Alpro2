@@ -41,7 +41,7 @@ int main(){
         }
     }
     
-    //Print
+    //Sorted Data Print
     printSort(n);
 
     //Send Print
