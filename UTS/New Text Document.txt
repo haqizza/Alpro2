@@ -1,0 +1,179 @@
+i
+tinggi
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+q
+tinggi
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+b
+tinggi
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+s
+tinggi
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+i
+sedang
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+q
+sedang
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+b
+sedang
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+s
+sedang
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+i
+rendah
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+q
+rendah
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+b
+rendah
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
+
+s
+rendah
+4
+500 2400 rose sedang
+1000 4000 cakra rendah
+500 2100 segitiga tinggi
+500 2200 curah sedang
+3
+1200 3000 sania sedang
+1000 2560 kunci sedang
+700 2600 kunci tinggi
+2
+500 1000 bola rendah
+500 1200 yellow sedang
