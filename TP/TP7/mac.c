@@ -1,23 +1,34 @@
 #include "head.h"
 /*Saya Muhammad Izzatul Haq mengerjakan evaluasi TP7 (UNIQ20) Angka Unique 2 dalam mata kuliah Algoritma Pemgrograman 2 untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.*/
-//Selection Sort
-void search(int arr[],int n){
-    int i,j,m=0;
-    for(i=0;i<3;i++){
-        for(j=0;j<n1[i];j++){
-            strcpy(final[m].tempat,arr[i][j].tempat);
-            final[m].transport = arr[i][j].transport;
-            final[m].inap = arr[i][j].inap;
-            final[m].total = arr[i][j].total;
-            m++;
-        }
+void scan(int n,int *arr){
+    int i;
+
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);  
     }
 }
-void printSort(int n1[]){
+void search(int n,int *count,int arr[],int *final){
+    int i,j,val,m=0;
+    for(i=0;i<n;i++){
+        val=0;
+        for(j=0;j<n;j++){
+            if(arr[i]==arr[j]){
+                val++;
+                
+            }
+        }
+        if(val==1){
+            final[m]=arr[i];
+            m++;
+            // printf("%d",m);
+        }
+    }
+    *count=m;
+}
+void print(int n,int final[]){
     int i;
     //Print according to format
-    printf("Data Tempat Wista di Indonesia:\n");
     for(i=0;i<n;i++){
-        printf("%s Rp%d Rp%d Rp%d\n",final[i].tempat,final[i].transport,final[i].inap,final[i].total);
+        printf("%d\n",final[i]);
     }
 }
