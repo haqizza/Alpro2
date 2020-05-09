@@ -309,6 +309,8 @@ void menu(int *n){//Menu Print
         addOther(n,'g');
     }else if(x==4){
         addOther(n,'t');
+    }else if(x==0){
+        system("cls");
     }
 }
 void front(int *n){//Front. Start
