@@ -40,5 +40,4 @@ void changeProgram(char pita[]);
 void insert(char pita[]);
 void update(char pita[]);
 void deleteQ(char pita[]);
-void select(char pita[]);
 void outCheck(char pita[]);
