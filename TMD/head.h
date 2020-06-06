@@ -1,34 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "mesinkata.h"
+#include "mesinkarakter.h"
 //Saya Muhammad Izzatul Haq mengerjakan evaluasi Tugas Masa Depan dalam mata kuliah Algoritma dan Pemrograman II untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 typedef struct{
-    char id[6];
+    char id[10];
     char nama[40];
-    char program[5];
+    char program[10];
 }pesertas;
 typedef struct{
-    char id[5];
+    char id[10];
     char namaProgram[40];
     char pengajar[40];
 }programs;
 
 pesertas peserta[50];
 programs program[50];
-int indeks;
-int panjangKata;
-char cKata[50];
+
+int nPeserta;
+int nProgram;
 int xit;
 
-void startKata(char pita[]);
-void resetKata();
-void incKata(char pita[]);
-char* getCKata();
-int getPanjangKata();
-int EOPKata(char pita[]);
-
-void readPeserta(int *nPeserta);
-void readProgram(int *nProgram);
-
-int exitT();
 void insertQuery(char *pita);
+void EOPCheck(char pita[]);
+int jumlahKata(char pita[]);
+int search(char par);
+
+void readPeserta();
+void readProgram();
+void writePeserta();
+void writeProgram();
+
+void addPeserta(char pita[]);
+void addProgram(char pita[]);
+void changePeserta(char pita[]);
+void changeProgram(char pita[]);
+
+void insert(char pita[]);
+void update(char pita[]);
+void deleteQ(char pita[]);
+void select(char pita[]);
+void outCheck(char pita[]);
