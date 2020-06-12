@@ -25,7 +25,7 @@ int main(){
             deleteQ(pita);
         }
         else if(strcmp(getCKata(),"SELECT") == 0){
-            // select(pita);
+            select(pita);
         }
         else if((strcmp(getCKata(),"nice") == 0) && (jumlahKata(pita) == 4)){
             outCheck(pita);
