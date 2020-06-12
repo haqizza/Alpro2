@@ -25,7 +25,9 @@ int xit;
 void insertQuery(char *pita);
 void EOPCheck(char pita[]);
 int jumlahKata(char pita[]);
-int search(char par);
+int search(char par,char kata[]);
+void spacePrint(int space,int longer,int value);
+void border(int longer[],int col);
 
 void readPeserta();
 void readProgram();
@@ -36,8 +38,14 @@ void addPeserta(char pita[]);
 void addProgram(char pita[]);
 void changePeserta(char pita[]);
 void changeProgram(char pita[]);
+void deletePeserta(char pita[]);
+void deleteProgram(char pita[]);
+void selectPeserta(char pita[]);
+void selectProgram(char pita[]);
+void selectJoin(char pita[]);
 
 void insert(char pita[]);
 void update(char pita[]);
 void deleteQ(char pita[]);
+void select(char pita[]);
 void outCheck(char pita[]);

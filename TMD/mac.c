@@ -21,11 +21,11 @@ void readPeserta(){//Read peserta.dat
     fclose(dataPeserta);
     nPeserta = i-1;//Set peserta number(jumlah)
     
-    //Copy peserta values to peserta final
+    //Copy peserta values to peserta 
     // for(i=0;i<n[0];i++){
-    //     strcpy(pesertafinal[i].id,peserta[i].id);
-    //     strcpy(pesertafinal[i].nama,peserta[i].nama);
-    //     strcpy(pesertafinal[i].program,peserta[i].program);
+    //     strcpy(peserta[i].id,peserta[i].id);
+    //     strcpy(peserta[i].nama,peserta[i].nama);
+    //     strcpy(peserta[i].program,peserta[i].program);
     // }
 }
 void readProgram(){//Read program.dat
@@ -119,7 +119,7 @@ void addProgram(char pita[]){//Add program
 }
 void changePeserta(char pita[]){//Add for BukuMentah
     int i,x;//Var init
-    x = search('a');//Assign data index to x
+    x = search('a',getCKata());//Assign data index to x
 
     int temp = indeks;
     char tempS[50];
@@ -137,7 +137,7 @@ void changePeserta(char pita[]){//Add for BukuMentah
 }
 void changeProgram(char pita[]){//Add program
     int i,x;//Var init
-    x = search('p');//Assign data index to x
+    x = search('p',getCKata());//Assign data index to x
 
     int temp = indeks;
     char tempS[50];
@@ -155,7 +155,7 @@ void changeProgram(char pita[]){//Add program
 }
 void deletePeserta(char pita[]){//Add peserta
     int x;//Var init
-    x = search('a');
+    x = search('a',getCKata());
     
     if(x != (nPeserta-1)){
         for(x;x < nPeserta;x++){
@@ -176,7 +176,7 @@ void deletePeserta(char pita[]){//Add peserta
 }
 void deleteProgram(char pita[]){//Add program
     int x;//Var init
-    x = search('p');
+    x = search('p',getCKata());
 
     if(x != (nProgram-1)){
         for(x;x < nProgram;x++){
@@ -194,6 +194,147 @@ void deleteProgram(char pita[]){//Add program
 
     writeProgram();
 }
+void selectPeserta(char pita[]){
+    int i,space[3],longer[4]={2,4,7};
+    char top[3][15] = {"Id","Nama","Program"};//init for title fields
+
+    //Counting longest number of each  field
+    for(i=0;i<nPeserta;i++){
+        if(strlen(peserta[i].id)>longer[0]){//If detected value longer
+            longer[0] = strlen(peserta[i].id);//Assign value to longer(var)
+        }
+        if(strlen(peserta[i].nama)>longer[1]){
+            longer[1] = strlen(peserta[i].nama);
+        }
+        if(strlen(peserta[i].program)>longer[2]){
+            longer[2] = strlen(peserta[i].program);
+        }
+    }
+
+    border(longer,3);//Border print
+
+    //Printing header/fields title
+    for(i=0;i<3;i++){
+        printf("|%s",top[i]);
+        spacePrint(space[i],longer[i],strlen(top[i]));
+    }
+    printf("|\n");
+
+    border(longer,3);//Border print
+
+    //Print each field values
+    for(i=0;i<nPeserta;i++){
+        printf("|%s",peserta[i].id);//record value print
+        spacePrint(space[0],longer[0],strlen(peserta[i].id));//Space print
+        
+        printf("|%s",peserta[i].nama);
+        spacePrint(space[1],longer[1],strlen(peserta[i].nama));
+
+        printf("|%s",peserta[i].program);
+        spacePrint(space[2],longer[2],strlen(peserta[i].program));
+
+        printf("|\n");
+    }
+
+    border(longer,3);//Border print
+}
+void selectProgram(char pita[]){
+    int i,space[3],longer[4]={2,12,8};
+    char top[3][15] = {"Id","Nama_Program","Pengajar"};//init for title fields
+
+    //Counting longest number of each  field
+    for(i=0;i<nProgram;i++){
+        if(strlen(program[i].id)>longer[0]){//If detected value longer
+            longer[0] = strlen(program[i].id);//Assign value to longer(var)
+        }
+        if(strlen(program[i].namaProgram)>longer[1]){
+            longer[1] = strlen(program[i].namaProgram);
+        }
+        if(strlen(program[i].pengajar)>longer[2]){
+            longer[2] = strlen(program[i].pengajar);
+        }
+    }
+
+    border(longer,3);//Border print
+
+    //Printing header/fields title
+    for(i=0;i<3;i++){
+        printf("|%s",top[i]);
+        spacePrint(space[i],longer[i],strlen(top[i]));
+    }
+    printf("|\n");
+
+    border(longer,3);//Border print
+
+    //Print each field values
+    for(i=0;i<nProgram;i++){
+        printf("|%s",program[i].id);//record value print
+        spacePrint(space[0],longer[0],strlen(program[i].id));//Space print
+        
+        printf("|%s",program[i].namaProgram);
+        spacePrint(space[1],longer[1],strlen(program[i].namaProgram));
+
+        printf("|%s",program[i].pengajar);
+        spacePrint(space[2],longer[2],strlen(program[i].pengajar));
+
+        printf("|\n");
+    }
+
+    border(longer,3);//Border print
+}
+void selectJoin(char pita[]){
+    int i,x,space[4],longer[4]={2,4,12,8};
+    char top[4][15] = {"Id","Nama","Nama_Program","Pengajar"};//init for title fields
+
+    //Counting longest number of each  field
+    for(i=0;i<nPeserta;i++){
+        if(strlen(peserta[i].id)>longer[0]){//If detected value longer
+            longer[0] = strlen(peserta[i].id);//Assign value to longer(var)
+        }
+        if(strlen(peserta[i].nama)>longer[1]){
+            longer[1] = strlen(peserta[i].nama);
+        }
+    }
+    for(i=0;i<nProgram;i++){
+        if(strlen(program[i].namaProgram)>longer[2]){//If detected value longer
+            longer[2] = strlen(program[i].namaProgram);//Assign value to longer(var)
+        }
+        if(strlen(program[i].pengajar)>longer[3]){
+            longer[3] = strlen(program[i].pengajar);
+        }
+    }
+
+    border(longer,4);//Border print
+
+    //Printing header/fields title
+    for(i=0;i<4;i++){
+        printf("|%s",top[i]);
+        spacePrint(space[i],longer[i],strlen(top[i]));
+    }
+    printf("|\n");
+
+    border(longer,4);//Border print
+
+    //Print each field values
+    for(i=0;i<nPeserta;i++){
+        printf("|%s",peserta[i].id);//record value print
+        spacePrint(space[0],longer[0],strlen(peserta[i].id));//Space print
+        
+        printf("|%s",peserta[i].nama);
+        spacePrint(space[1],longer[1],strlen(peserta[i].nama));
+        
+        x = search('p',peserta[i].program);
+        printf("|%s",program[x].namaProgram);
+        spacePrint(space[2],longer[2],strlen(program[x].namaProgram));
+
+        printf("|%s",program[x].pengajar);
+        spacePrint(space[3],longer[3],strlen(program[x].pengajar));
+
+        printf("|\n");
+    }
+
+    border(longer,4);//Border print
+}
 
 // ~~~ Tools ~~~
 void insertQuery(char *pita){
@@ -209,7 +350,7 @@ void EOPCheck(char pita[]){
         }
         inc(pita);
     }
-    if(EOP() == 1){
+    if(EOP() == 0){
         printf("EOP Tidak Terdeteksi\n\n");
         insertQuery(pita);
     }
@@ -233,12 +374,12 @@ int jumlahKata(char pita[]){
 
     return jKata;
 }
-int search(char par){//Value search
+int search(char par,char kata[]){//Value search
     int i,hasil=-1;//init hasil with -1 to identify when value not found
     
     if(par == 'a'){//Search for Peserta
         for(i=0;i<nPeserta;i++){
-            if(strcmp(getCKata(),peserta[i].id) == 0){//if value same
+            if(strcmp(kata,peserta[i].id) == 0){//if value same
                 hasil = i;//assign indeks number to hasil
                 break;//get out from for
             }
@@ -246,7 +387,7 @@ int search(char par){//Value search
     }
     if(par = 'p'){//Search for Program
         for(i=0;i<nProgram;i++){
-            if(strcmp(getCKata(),program[i].id) == 0){
+            if(strcmp(kata,program[i].id) == 0){
                 hasil = i;
                 break;
             }
@@ -254,6 +395,26 @@ int search(char par){//Value search
     }
     
     return hasil;
+}
+void spacePrint(int space,int longer,int value){//Space print
+    int j;
+    space = longer - value;//minus longer with record value length, then assign to space
+    for(j=0;j<space;j++){//Printing space as long as space
+        printf(" ");
+    }
+}
+void border(int longer[],int col){//Print border
+    int i,j;
+    printf("+");//Print edge
+    for(i=0;i<col;i++){
+        if(i>0){//Print record divider
+            printf("+");
+        }
+        for(j=0;j<longer[i];j++){//Print line
+            printf("-");
+        }
+    }
+    printf("+\n");//Print edge
 }
 
 // ~~~ Data Manipulation ~~~
@@ -265,7 +426,7 @@ void insert(char pita[]){
         incKata(pita);
         
         if(jumlahKata(pita) == 3){
-            if(search('a') == -1){
+            if(search('a',getCKata()) == -1){
                 addPeserta(pita);
             }
             else{
@@ -279,7 +440,7 @@ void insert(char pita[]){
         incKata(pita);
         
         if(jumlahKata(pita) == 3){
-            if(search('p') == -1){
+            if(search('p',getCKata()) == -1){
                 addProgram(pita);
             }
             else{
@@ -301,7 +462,7 @@ void update(char pita[]){
         incKata(pita);
         
         if(jumlahKata(pita) == 3){
-            if(search('a') != -1){
+            if(search('a',getCKata()) != -1){
                 changePeserta(pita);
             }
             else{
@@ -315,7 +476,7 @@ void update(char pita[]){
         incKata(pita);
         
         if(jumlahKata(pita) == 3){
-            if(search('p') != -1){
+            if(search('p',getCKata()) != -1){
                 changeProgram(pita);
             }
             else{
@@ -337,7 +498,7 @@ void deleteQ(char pita[]){
         incKata(pita);
         
         if((jumlahKata(pita) == 1)){
-            if(search('a') != -1){
+            if(search('a',getCKata()) != -1){
                 deletePeserta(pita);
             }
             else{
@@ -351,7 +512,7 @@ void deleteQ(char pita[]){
         incKata(pita);
         
         if(jumlahKata(pita) == 1){
-            if(search('p') != -1){
+            if(search('p',getCKata()) != -1){
                 deleteProgram(pita);
             }
             else{
@@ -362,6 +523,32 @@ void deleteQ(char pita[]){
             printf("Data yang dimasukkan tidak sesuai\n\n");
         }
     }else{
+        printf("Tabel tidak ditemukan\n\n");
+    }
+}
+void select(char pita[]){
+    incKata(pita);
+
+    //is table exist?
+    if((jumlahKata(pita) == 2) && (strcmp(getCKata(),"peserta") == 0)){
+        incKata(pita);
+        
+        if(strcmp(getCKata(),"program") == 0){
+            selectJoin(pita);
+        }
+        else{
+            printf("Tabel tidak ditemukan\n\n");
+        }  
+    }
+    else if((jumlahKata(pita) == 1) && (strcmp(getCKata(),"peserta") == 0)){
+        incKata(pita);
+        selectPeserta(pita);
+    }
+    else if((jumlahKata(pita) == 1) && (strcmp(getCKata(),"program") == 0)){
+        incKata(pita);
+        selectProgram(pita);
+    }
+    else{
         printf("Tabel tidak ditemukan\n\n");
     }
 }
