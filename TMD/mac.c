@@ -341,6 +341,7 @@ void insertQuery(char *pita){
     printf("KenDB>");
     scanf(" %99[^\n]s",pita);
     EOPCheck(pita);
+    printf("\n");
 }
 void EOPCheck(char pita[]){
     start(pita);
@@ -428,6 +429,7 @@ void insert(char pita[]){
         if(jumlahKata(pita) == 3){
             if(search('a',getCKata()) == -1){
                 addPeserta(pita);
+                printf("Data berhasil ditambahkan\n\n");
             }
             else{
                 printf("ID sudah digunakan\n\n");
@@ -464,6 +466,7 @@ void update(char pita[]){
         if(jumlahKata(pita) == 3){
             if(search('a',getCKata()) != -1){
                 changePeserta(pita);
+                printf("Data telah berhasil dirubah\n\n");
             }
             else{
                 printf("Data tidak ditemukan\n\n");
@@ -500,6 +503,7 @@ void deleteQ(char pita[]){
         if((jumlahKata(pita) == 1)){
             if(search('a',getCKata()) != -1){
                 deletePeserta(pita);
+                printf("Data telah berhasil dihapus\n\n");
             }
             else{
                 printf("Data tidak ditemukan\n\n");
@@ -534,6 +538,7 @@ void select(char pita[]){
         incKata(pita);
         
         if(strcmp(getCKata(),"program") == 0){
+            printf("Ini datamu!\n\n");
             selectJoin(pita);
         }
         else{
@@ -542,10 +547,12 @@ void select(char pita[]){
     }
     else if((jumlahKata(pita) == 1) && (strcmp(getCKata(),"peserta") == 0)){
         incKata(pita);
+        printf("Ini datamu!\n\n");
         selectPeserta(pita);
     }
     else if((jumlahKata(pita) == 1) && (strcmp(getCKata(),"program") == 0)){
         incKata(pita);
+        printf("Ini datamu!\n\n");
         selectProgram(pita);
     }
     else{
@@ -561,9 +568,9 @@ void outCheck(char pita[]){
 
             if(strcmp(getCKata(),"meet") == 0){
                 incKata(pita);
-                printf("kl\n");
+                
                 if(strcmp(getCKata(),"you") == 0){ 
-                    xit = 0;
+                    xit = 1;
                 }
                 else{
                     printf("Query tidak valid\n\n");
@@ -576,7 +583,7 @@ void outCheck(char pita[]){
         else{
             printf("Query tidak valid\n\n");
         }
-        printf("kl1\n");
+        
     }
     else{
         printf("Query tidak valid\n\n");
